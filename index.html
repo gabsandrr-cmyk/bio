@@ -2,30 +2,37 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gabriela Andrade</title>
 <meta name="description" content="Gabriela Andrade — Empresária & Estrategista. Mentoria DNA Magnético para pequenos negócios.">
 <meta property="og:title" content="Gabriela Andrade">
 <meta property="og:description" content="Empresária & Estrategista. Mentoria DNA Magnético para pequenos negócios.">
-<meta property="og:image" content="design.png">
+<meta property="og:image" content="design-v3.png">
 <meta name="theme-color" content="#0d0000">
 <style>
-  html,body{margin:0;background:#0d0000}
-  body{display:flex;justify-content:center}
-  .page{position:relative;width:100%;max-width:480px}
-  .page img{display:block;width:100%;height:auto}
-  .hit{position:absolute;display:block;border-radius:6%}
-  /* área clicável: card DNA Magnético */
-  .dna{left:17.3%;top:29.9%;width:64.2%;height:20.5%}
-  /* área clicável: WhatsApp */
-  .wpp{left:61.1%;top:77.2%;width:21.3%;height:8.4%}
+  :root{--fundo:#0d0000;--w:min(100vw,50dvh,600px)}
+  *{-webkit-tap-highlight-color:transparent;box-sizing:border-box}
+  html,body{margin:0;background:var(--fundo);min-height:100%}
+  body{min-height:100dvh;overflow-x:hidden;display:flex;justify-content:center;align-items:flex-start}
+  .page{position:relative;width:max(var(--w),min(100vw,600px))}
+  .page img{display:block;width:100%;height:auto;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+  .hit{position:absolute;display:block;outline:none;border-radius:8%}
+  .dna{left:16.3%;top:36.5%;width:66.7%;height:16%}
+  .wpp{left:78.6%;top:3.8%;width:11.5%;height:5.7%;border-radius:50%}
+  /* contorno do próprio card, bem sutil, "respirando" */
+  .borda{position:absolute;left:16.3%;top:36.5%;width:67.1%;height:16%;border-radius:5.2%/11%;pointer-events:none;
+         border:1px solid rgba(255,255,255,.45);animation:respira 3.6s ease-in-out infinite;transition:opacity .12s}
+  @keyframes respira{0%,100%{opacity:.05}50%{opacity:.55}}
+  .dna:active ~ .borda{opacity:.8}
+  @media (prefers-reduced-motion:reduce){.borda{animation:none;opacity:.25}}
 </style>
 </head>
 <body>
 <main class="page">
-  <img src="design.png" alt="Gabriela Andrade — Empresária & Estrategista">
+  <img src="design-v3.png" alt="Gabriela Andrade — Empresária & Estrategista" draggable="false">
   <a class="hit dna" href="https://form.respondi.app/oYdUsMCa?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio&amp;utm_id=97760_v0_s00_e0_tv3" aria-label="Mentoria DNA Magnético"></a>
   <a class="hit wpp" href="https://w.app/bioisinstagabi" aria-label="WhatsApp Business"></a>
+  <span class="borda" aria-hidden="true"></span>
 </main>
 </body>
 </html>
